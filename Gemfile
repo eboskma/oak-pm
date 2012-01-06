@@ -18,15 +18,16 @@ end
 
 gem 'jquery-rails'
 
+gem 'css-bootstrap-rails'
 gem 'rspec-rails'
+gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'draper'
 gem 'haml'
-gem 'simple_form'
+gem 'formtastic'
 gem 'cancan'
-gem 'nifty-generators'
 
 group :development do
 	gem 'hpricot'
