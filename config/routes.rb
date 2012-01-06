@@ -1,4 +1,6 @@
 OakPm::Application.routes.draw do
+  devise_for :users
+
   get 'home' => 'pages#home'
 
   get "about" => 'pages#about'
