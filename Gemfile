@@ -28,6 +28,7 @@ gem 'draper'
 gem 'haml'
 gem 'formtastic'
 gem 'cancan'
+gem 'devise'
 
 group :development do
 	gem 'hpricot'
