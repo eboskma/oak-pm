@@ -1,0 +1,22 @@
+- title 'Users'
+%table.table.table-striped
+	%thead
+		%tr
+			%th ID
+			%th Name
+			%th Password
+			%th Activation state
+			%th Actions
+	%tbody
+		- @users.each do |user|
+			%tr
+				%td #{user.id}
+				%td #{user.username}
+				%td #{user.password}
+				%td #{user.activation_state.capitalize}
+				%td 
+					= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini'
+					= link_to 'Activate', {controller: 'users', action: 'activate', id: user.activation_token}, confirm: 'Are you sure?', :class => 'btn btn-mini btn-warning' unless user.activated?
+					= link_to 'Destroy', user_path(user), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger'
+
+= link_to 'New', new_user_path, :class => 'btn btn-primary'

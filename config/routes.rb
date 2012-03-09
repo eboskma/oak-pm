@@ -1,7 +1,15 @@
 OakPm::Application.routes.draw do
-  devise_for :users
-
-  get 'home' => 'pages#home'
+  resources :sessions
+  resources :users do
+		member do
+			get :activate
+		end
+	end
+	
+	get 'login' => 'sessions#new', :as => :login
+	get 'logout' => 'sessions#destroy', :as => :logout
+	
+	get 'home' => 'pages#home'
 
   get "about" => 'pages#about'
 
