@@ -10,10 +10,10 @@
 	%tbody
 		- @users.each do |user|
 			%tr
-				%td #{user.id}
-				%td #{user.username}
-				%td #{user.password}
-				%td #{user.activation_state.capitalize}
+				%td= user.id
+				%td= link_to user.username, user
+				%td= user.password
+				%td= user.activation_state.capitalize
 				%td 
 					= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini'
 					= link_to 'Activate', {controller: 'users', action: 'activate', id: user.activation_token}, confirm: 'Are you sure?', :class => 'btn btn-mini btn-warning' unless user.activated?

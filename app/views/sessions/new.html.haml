@@ -3,8 +3,8 @@
 = simple_form_for :session, method: :post, url: sessions_path, html: { :class => 'form-horizontal' }  do |f|
 	%fieldset
 		
-		= f.input :username, :label => 'Username'
-		= f.input :password, :label => 'Password'
+		= f.input :username, label: 'E-mail address', as: 'email'
+		= f.input :password, label: 'Password'
 		
 		.actions
-			= f.button :submit, :value => 'Login'
+			= f.button :submit, value: 'Login'
